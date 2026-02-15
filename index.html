@@ -1,384 +1,263 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" data-theme="dark">
 <head>
-    <!-- ========================= -->
-    <!-- BASIC META & SEO          -->
-    <!-- ========================= -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aisuma ID | Freelance Application Developer</title>
-    <meta name="description" content="Aisuma ID adalah Freelance Application Developer berbasis di Jawa Timur, Indonesia. Spesialis web development, backend system, database optimization, dan scalable architecture." />
-    <meta name="author" content="Aisuma ID" />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aisuma ID | Freelance Application Developer</title>
+<meta name="description" content="Aisuma ID - Freelance Application Developer berbasis di Jawa Timur, Indonesia. Spesialis web, backend, database, dan scalable architecture.">
+<meta name="author" content="Aisuma ID">
 
-    <style>
-        /* ========================= */
-        /* ROOT VARIABLES (THEME)   */
-        /* ========================= */
-        :root {
-            --bg: #f5f5f5;
-            --card: #ffffff;
-            --text: #2f2f2f;
-            --subtext: #555;
-            --accent: #2f2f2f;
-            --border: #eaeaea;
-        }
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
 
-        [data-theme="dark"] {
-            --bg: #1f1f1f;
-            --card: #2a2a2a;
-            --text: #eaeaea;
-            --subtext: #bdbdbd;
-            --accent: #f5f5f5;
-            --border: #333;
-        }
+<style>
+:root {
+  --bg:#1f1f1f;
+  --card:#2a2a2a;
+  --text:#eaeaea;
+  --sub:#bdbdbd;
+  --accent:#f5f5f5;
+  --border:#333;
+}
 
-        /* ========================= */
-        /* GLOBAL STYLE              */
-        /* ========================= */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+[data-theme="light"]{
+  --bg:#f5f5f5;
+  --card:#ffffff;
+  --text:#2f2f2f;
+  --sub:#555;
+  --accent:#2f2f2f;
+  --border:#eaeaea;
+}
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            transition: 0.3s ease;
-        }
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
 
-        h1, h2, h3 {
-            margin-bottom: 15px;
-        }
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+  background:var(--bg);
+  color:var(--text);
+  transition:.3s;
+  line-height:1.6;
+}
 
-        p {
-            margin-bottom: 15px;
-            color: var(--subtext);
-        }
+section{padding:80px 20px;max-width:1100px;margin:auto;}
 
-        section {
-            padding: 80px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
+h1,h2,h3{margin-bottom:15px;}
 
-        /* ========================= */
-        /* NAVBAR                    */
-        /* ========================= */
-        nav {
-            position: sticky;
-            top: 0;
-            background: var(--card);
-            border-bottom: 1px solid var(--border);
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-        }
+p{color:var(--sub);margin-bottom:15px;}
 
-        nav h3 {
-            font-weight: bold;
-        }
+nav{
+  position:sticky;top:0;
+  background:var(--card);
+  border-bottom:1px solid var(--border);
+  padding:15px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:999;
+}
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
+nav ul{display:flex;gap:20px;list-style:none;}
+nav a{text-decoration:none;color:var(--text);font-size:14px;}
 
-        nav a {
-            text-decoration: none;
-            color: var(--text);
-            font-size: 14px;
-        }
+.theme-toggle{
+  cursor:pointer;
+  font-size:18px;
+}
 
-        nav button {
-            background: var(--accent);
-            color: var(--bg);
-            border: none;
-            padding: 6px 12px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 12px;
-        }
+.hero{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap:30px;
+  padding-top:100px;
+}
 
-        /* ========================= */
-        /* HERO SECTION              */
-        /* ========================= */
-        .hero {
-            text-align: center;
-            padding-top: 100px;
-        }
+.hero svg{
+  width:220px;
+  opacity:.9;
+}
 
-        .hero h1 {
-            font-size: 36px;
-        }
+.btn{
+  display:inline-block;
+  padding:10px 20px;
+  border-radius:25px;
+  text-decoration:none;
+  margin:5px;
+  font-size:14px;
+  transition:.3s;
+}
 
-        .hero p {
-            max-width: 600px;
-            margin: auto;
-        }
+.btn-primary{
+  background:var(--accent);
+  color:var(--bg);
+}
 
-        .btn-group {
-            margin-top: 20px;
-        }
+.btn-outline{
+  border:1px solid var(--accent);
+  color:var(--accent);
+}
 
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 5px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-size: 14px;
-            transition: 0.3s ease;
-        }
+.btn:hover{opacity:.8;}
 
-        .btn-primary {
-            background: var(--accent);
-            color: var(--bg);
-        }
+.grid{display:grid;gap:20px;}
 
-        .btn-outline {
-            border: 1px solid var(--accent);
-            color: var(--accent);
-        }
+.card{
+  background:var(--card);
+  padding:20px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  transition:.3s;
+}
 
-        .btn:hover {
-            opacity: 0.8;
-        }
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
 
-        /* ========================= */
-        /* CARD STYLE                */
-        /* ========================= */
-        .grid {
-            display: grid;
-            gap: 20px;
-        }
+.icon{
+  width:22px;
+  vertical-align:middle;
+  margin-right:8px;
+}
 
-        .card {
-            background: var(--card);
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            transition: 0.3s ease;
-        }
+footer{
+  text-align:center;
+  padding:30px;
+  border-top:1px solid var(--border);
+  background:var(--card);
+  font-size:14px;
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-        }
+@media(min-width:768px){
+  .hero{flex-direction:row;text-align:left;justify-content:space-between;}
+  .grid-3{grid-template-columns:repeat(3,1fr);}
+}
 
-        /* ========================= */
-        /* FOOTER                    */
-        /* ========================= */
-        footer {
-            text-align: center;
-            padding: 30px;
-            border-top: 1px solid var(--border);
-            background: var(--card);
-            font-size: 14px;
-        }
-
-        /* ========================= */
-        /* RESPONSIVE                */
-        /* ========================= */
-        @media(min-width: 768px) {
-            .hero h1 {
-                font-size: 48px;
-            }
-
-            .grid-3 {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .grid-2 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* ========================= */
-        /* FADE ANIMATION            */
-        /* ========================= */
-        .fade {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s ease;
-        }
-
-        .fade.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-    </style>
+.fade{opacity:0;transform:translateY(20px);transition:.8s;}
+.fade.show{opacity:1;transform:translateY(0);}
+</style>
 </head>
 
 <body>
 
-    <!-- ========================= -->
-    <!-- NAVIGATION                -->
-    <!-- ========================= -->
-    <nav>
-        <h3>Aisuma ID</h3>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button onclick="toggleTheme()">Toggle</button>
-    </nav>
+<nav>
+  <strong>Aisuma ID</strong>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="theme-toggle" onclick="toggleTheme()" id="themeIcon">☀</div>
+</nav>
 
-    <!-- ========================= -->
-    <!-- HERO SECTION              -->
-    <!-- ========================= -->
-    <section class="hero fade">
-        <h1>Aisuma ID</h1>
-        <h3>Freelance Application Developer</h3>
-        <p>
-            Professional freelance developer specializing in scalable web applications,
-            backend systems, and high-performance database architecture.
-        </p>
-        <div class="btn-group">
-            <a href="#contact" class="btn btn-primary">Hire Me</a>
-            <a href="#portfolio" class="btn btn-outline">View Portfolio</a>
-        </div>
-    </section>
+<section class="hero fade">
+  <div>
+    <h1>Aisuma ID</h1>
+    <h3>Freelance Application Developer</h3>
+    <p>Professional developer specializing in scalable web applications, backend systems, and high-performance database architecture.</p>
+    <a href="#contact" class="btn btn-primary">Hire Me</a>
+    <a href="#portfolio" class="btn btn-outline">View Portfolio</a>
+  </div>
 
-    <!-- ========================= -->
-    <!-- ABOUT SECTION             -->
-    <!-- ========================= -->
-    <section id="about" class="fade">
-        <h2>About Me</h2>
-        <p>
-            Aisuma ID adalah freelance application developer berbasis di Jawa Timur, Indonesia.
-            Berpengalaman dalam membangun sistem aplikasi modern yang scalable,
-            stabil, dan siap digunakan untuk kebutuhan bisnis skala kecil hingga enterprise.
-        </p>
-        <p>
-            Fokus utama pengembangan mencakup web development, backend system,
-            API integration, serta optimalisasi database untuk performa tinggi.
-            Berpengalaman dalam menangani sistem dengan beban data besar dan kebutuhan high concurrency.
-        </p>
-        <p>
-            Terbiasa bekerja dengan arsitektur modular, microservices, serta pendekatan
-            scalable architecture untuk memastikan sistem tetap stabil dan efisien
-            dalam jangka panjang.
-        </p>
-        <p>
-            Siap bekerja secara remote untuk klien di seluruh Indonesia dengan komunikasi
-            profesional dan komitmen terhadap kualitas hasil kerja.
-        </p>
-    </section>
+  <!-- Simple SVG Illustration -->
+  <svg viewBox="0 0 200 200" fill="none">
+    <circle cx="100" cy="100" r="80" stroke="currentColor" stroke-width="4"/>
+    <rect x="60" y="70" width="80" height="60" rx="8" stroke="currentColor" stroke-width="3"/>
+    <circle cx="100" cy="100" r="10" fill="currentColor"/>
+  </svg>
+</section>
 
-    <!-- ========================= -->
-    <!-- SERVICES SECTION          -->
-    <!-- ========================= -->
-    <section id="services" class="fade">
-        <h2>Services</h2>
-        <div class="grid grid-3">
-            <div class="card">Web Development</div>
-            <div class="card">Backend Development</div>
-            <div class="card">API Integration</div>
-            <div class="card">Database Optimization</div>
-            <div class="card">System Architecture</div>
-            <div class="card">Maintenance & Support</div>
-        </div>
-    </section>
+<section id="about" class="fade">
+  <h2>About Me</h2>
+  <p>Aisuma ID adalah freelance application developer berbasis di Jawa Timur, Indonesia. Berpengalaman membangun sistem aplikasi modern yang scalable dan stabil untuk kebutuhan bisnis.</p>
+  <p>Fokus pada web development, backend architecture, API integration, dan optimalisasi database untuk performa tinggi dan beban data besar.</p>
+  <p>Terbiasa menangani high concurrency system serta scalable architecture berbasis modular dan clean code approach.</p>
+  <p>Siap bekerja remote untuk klien di seluruh Indonesia dengan komunikasi profesional dan komitmen kualitas.</p>
+</section>
 
-    <!-- ========================= -->
-    <!-- TECH STACK SECTION        -->
-    <!-- ========================= -->
-    <section class="fade">
-        <h2>Tech Stack</h2>
-        <div class="grid grid-3">
-            <div class="card">HTML, CSS, JavaScript</div>
-            <div class="card">Kotlin</div>
-            <div class="card">PostgreSQL</div>
-            <div class="card">ClickHouse</div>
-            <div class="card">Linux Server</div>
-            <div class="card">Git & Docker</div>
-        </div>
-    </section>
+<section id="services" class="fade">
+  <h2>Services</h2>
+  <div class="grid grid-3">
+    <div class="card">💻 Web Development</div>
+    <div class="card">⚙ Backend Development</div>
+    <div class="card">🔗 API Integration</div>
+    <div class="card">📊 Database Optimization</div>
+    <div class="card">🏗 System Architecture</div>
+    <div class="card">🛠 Maintenance & Support</div>
+  </div>
+</section>
 
-    <!-- ========================= -->
-    <!-- PORTFOLIO SECTION         -->
-    <!-- ========================= -->
-    <section id="portfolio" class="fade">
-        <h2>Portfolio</h2>
-        <div class="grid grid-3">
-            <div class="card">
-                <h3>Enterprise Monitoring System</h3>
-                <p>High performance backend system untuk monitoring data skala besar.</p>
-            </div>
-            <div class="card">
-                <h3>Web Management Platform</h3>
-                <p>Custom admin dashboard dengan integrasi API dan sistem modular.</p>
-            </div>
-            <div class="card">
-                <h3>Database Optimization Project</h3>
-                <p>Optimasi query dan arsitektur database untuk performa maksimal.</p>
-            </div>
-        </div>
-    </section>
+<section class="fade">
+  <h2>Tech Stack</h2>
+  <div class="grid grid-3">
+    <div class="card">🌐 HTML, CSS, JavaScript</div>
+    <div class="card">📱 Kotlin</div>
+    <div class="card">🐘 PostgreSQL</div>
+    <div class="card">⚡ ClickHouse</div>
+    <div class="card">🐧 Linux Server</div>
+    <div class="card">🔀 Git & Docker</div>
+  </div>
+</section>
 
-    <!-- ========================= -->
-    <!-- CONTACT SECTION           -->
-    <!-- ========================= -->
-    <section id="contact" class="fade">
-        <h2>Contact</h2>
-        <p>Email: aisuma@example.com</p>
-        <p>WhatsApp: +62 812-xxxx-xxxx</p>
-        <p>Location: Jawa Timur, Indonesia</p>
-    </section>
+<section id="portfolio" class="fade">
+  <h2>Portfolio</h2>
+  <div class="grid grid-3">
+    <div class="card">
+      <h3>Enterprise Monitoring System</h3>
+      <p>Backend monitoring system dengan performa tinggi dan data processing skala besar.</p>
+    </div>
+    <div class="card">
+      <h3>Web Management Platform</h3>
+      <p>Custom dashboard modular dengan integrasi API dan database optimization.</p>
+    </div>
+    <div class="card">
+      <h3>Database Optimization</h3>
+      <p>Optimasi query dan arsitektur untuk sistem high concurrency.</p>
+    </div>
+  </div>
+</section>
 
-    <!-- ========================= -->
-    <!-- FOOTER                    -->
-    <!-- ========================= -->
-    <footer>
-        © 2026 Aisuma ID. All rights reserved.
-    </footer>
+<section id="contact" class="fade">
+  <h2>Contact</h2>
+  <p>Email: aisuma@example.com</p>
+  <p>WhatsApp: +62 812-xxxx-xxxx</p>
+  <p>Location: Jawa Timur, Indonesia</p>
+</section>
 
-    <script>
-        // =========================
-        // THEME TOGGLE WITH STORAGE
-        // =========================
-        function toggleTheme() {
-            const current = document.documentElement.getAttribute("data-theme");
-            if (current === "dark") {
-                document.documentElement.removeAttribute("data-theme");
-                localStorage.setItem("theme", "light");
-            } else {
-                document.documentElement.setAttribute("data-theme", "dark");
-                localStorage.setItem("theme", "dark");
-            }
-        }
+<footer>
+  © 2026 Aisuma ID. All rights reserved.
+</footer>
 
-        // Load saved theme
-        if (localStorage.getItem("theme") === "dark") {
-            document.documentElement.setAttribute("data-theme", "dark");
-        }
+<script>
+function toggleTheme(){
+  const html=document.documentElement;
+  const icon=document.getElementById("themeIcon");
 
-        // =========================
-        // FADE-IN ON SCROLL
-        // =========================
-        const faders = document.querySelectorAll(".fade");
+  if(html.getAttribute("data-theme")==="dark"){
+    html.setAttribute("data-theme","light");
+    localStorage.setItem("theme","light");
+    icon.textContent="🌙";
+  }else{
+    html.setAttribute("data-theme","dark");
+    localStorage.setItem("theme","dark");
+    icon.textContent="☀";
+  }
+}
 
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("show");
-                }
-            });
-        }, { threshold: 0.2 });
+if(localStorage.getItem("theme")==="light"){
+  document.documentElement.setAttribute("data-theme","light");
+  document.getElementById("themeIcon").textContent="🌙";
+}
 
-        faders.forEach(el => observer.observe(el));
-    </script>
+const faders=document.querySelectorAll(".fade");
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add("show");}
+  });
+},{threshold:0.2});
+faders.forEach(el=>observer.observe(el));
+</script>
 
 </body>
 </html>
